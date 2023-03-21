@@ -18,10 +18,29 @@ public class Main {
         System.out.println(arrSum(randomArr(2, 9)));
 
         System.out.println("-------------7---------------");
-        System.out.println(arrMiddle(randomArr(2,9)));
+        System.out.println(arrMiddle(randomArr(2, 9)));
 
         System.out.println("------------8-----------");
+        int square1 = 6;
+        int square2 = 8;
+        Square(20, 5);
+        System.out.println("--------------9----------------");
+        System.out.println("sakinyje yra raidziu ir tarpu: " + sentenceLoop("Šiandien labai graži diena"));
+        System.out.println("-------------10---------------");
+        System.out.println("uzkoduotas sakinys: " + sentenceLoopBack("uzkoduotas sakinys"));
+        String sentence = "cia yra sakinys";
+        System.out.println("--------------1---------------");
+        text(sentence);
+        System.out.println("-----------------2--------------");
+//        String result = randomString(15);
+//        System.out.println(result);
+//        printLettersAndNumbers(result);
+        System.out.println(randomMixedString(20));
+        System.out.println("-------3-------");
+        System.out.println(roundnumber(8));
 
+        int[] rndArray = new int[100]
+        }
 
     }
 
@@ -54,7 +73,7 @@ public class Main {
         return numbers2;
     }
 
-    public static int arrSum ( int[] arr) {
+    public static int arrSum(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
@@ -63,27 +82,118 @@ public class Main {
     }
 
 
-    public static int arrMiddle (int[] arr) {
-        int sum = 0;
+    public static double arrMiddle(int[] arr) {
+        double sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum += arr[i] / arr.length;
+            sum += arr[i] / (double) arr.length;
         }
         return sum;
     }
 
 
-    public static int Square(int x)
-        for (int i = 0; i < 25; i++) {
+    public static void Square(int square1, int square2) {
+        for (int i = 0; i < square1; i++) {
             String x = "";
-            for (int a = 0; a < 25; a++) {
-                x +=  "*";
+            for (int a = 0; a < square2; a++) {
+                x += "*";
             }
-                System.out.println(x);
+            System.out.println(x);
         }
     }
 
 
+    public static int sentenceLoop(String sentence) {
+        int count = 0;
+        for (int i = 0; i < sentence.length(); i++) {
+            count += +1;
+        }
+        return count;
+    }
 
+
+    public static String sentenceLoopBack(String sentence) {
+        int i, len = sentence.length();
+        StringBuilder dest = new StringBuilder(len);
+
+        for (i = (len - 1); i >= 0; i--) {
+            dest.append(sentence.charAt(i));
+        }
+
+        return dest.toString();
+    }
+
+
+    public static void text(String sentence) {
+        System.out.println("-----" + sentence + "-------");
+    }
+
+
+//    public static String randomString(int lenght) {
+//        String rndString = "abcdefghijklmnopqrstuvwxyz0123456789";
+//        String random = "";
+//
+//        for (int i = 0; i < lenght; i++) {
+//            random += rndString.charAt((int) (Math.random() * rndString.length()));
+//        }
+//
+//
+//        return random;
+//    }
+//
+//    public static void printLettersAndNumbers(String text){
+//        for (int i = 0; i < text.length(); i++) {
+//            System.out.println(text.charAt(i));
+//            System.out.println(Character.isDigit(text.charAt(i)));
+//
+//
+//
+//
+//        }
+//    }
+
+    public static int randomMixedString(int length) {
+
+        String alphanumeric = "abcdefghijklmnopqrstuvwxyz0123456789";
+        String rndStr = "";
+
+        for (int i = 0; i < length; i++) {
+            rndStr += alphanumeric.charAt((int) (Math.random() * alphanumeric.length()));
+        }
+        System.out.println(rndStr);
+
+
+        String nums = "";
+        for (int i = 0; i < rndStr.length(); i++) {
+            if (Character.isDigit(rndStr.charAt(i))) {
+                nums += rndStr.charAt(i);
+
+
+            } else {
+                if (nums.length() != 0) {
+                    System.out.println("[" + nums + "]");
+                    nums = "";
+                }
+                System.out.println(rndStr.charAt(i));
+            }
+
+        }
+
+
+        return length;
+    }
+
+
+public static int roundnumber( int number){
+        int count = 0;
+    for (int i = 2; i <= number ; i++) {
+        if (number % i == 0)
+    count++;
+    }
+    return count;
+}
+
+
+    
 
 
 
