@@ -72,7 +72,15 @@ public class Main {
     }
 
 
-
+    public static int Square(int x)
+        for (int i = 0; i < 25; i++) {
+            String x = "";
+            for (int a = 0; a < 25; a++) {
+                x +=  "*";
+            }
+                System.out.println(x);
+        }
+    }
 
 
 
