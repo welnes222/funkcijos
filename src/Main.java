@@ -1,4 +1,5 @@
 import java.sql.SQLOutput;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,8 +40,13 @@ public class Main {
         System.out.println("-------3-------");
         System.out.println(roundnumber(8));
 
-        int[] rndArray = new int[100]
-        }
+//        int[] array = {3,8,7,2,6};
+//        String prntArray = sortArray(array);
+//        System.out.println(prntArray);
+
+        int min = 33;
+        int max = 100;
+        System.out.println(rndArray);
 
     }
 
@@ -192,8 +198,51 @@ public static int roundnumber( int number){
     return count;
 }
 
+public static int[] rndArray(int min, int max){
+        int[] arr = new int [ 5 ];
+    for (int i = 0; i < arr.length; i++) {
+        arr[i] = min + (int) (Math.random() * (max - min +1));
+        System.out.println(arr[i] + ", ");
 
+    }
+    System.out.println("");
+    return arr;
+}
     
+    public static int[] sortArray (int [] number) {
+        for (int i = 0; i < number.length; i++) {
+            for (int a = i; a < number.length; a++) {
+                if (roundnumber(number[i])) > (roundnumber(number[a])) {
+                    int blnk = number[i];
+                    number[i] = number[a];
+                    number[a] = blnk;
+
+
+                }
+                System.out.println(Arrays.toString(number));
+            }
+        }
+        return number;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
