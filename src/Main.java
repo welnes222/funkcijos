@@ -38,16 +38,17 @@ public class Main {
 //        printLettersAndNumbers(result);
         System.out.println(randomMixedString(20));
         System.out.println("-------3-------");
-        System.out.println(roundnumber(8));
+//        System.out.println(roundnumber(8));
 
 //        int[] array = {3,8,7,2,6};
 //        String prntArray = sortArray(array);
 //        System.out.println(prntArray);
 
-        int min = 33;
-        int max = 100;
-        System.out.println(rndArray);
+//        int min = 33;
+//        int max = 100;
+        System.out.println(rndArray(22,100));
 
+        sortArray(rndArray(4,4));
     }
 
 
@@ -202,20 +203,20 @@ public static int[] rndArray(int min, int max){
         int[] arr = new int [ 5 ];
     for (int i = 0; i < arr.length; i++) {
         arr[i] = min + (int) (Math.random() * (max - min +1));
-        System.out.println(arr[i] + ", ");
+        System.out.println(arr[i] );
 
     }
-    System.out.println("");
+    System.out.println(" ");
     return arr;
 }
     
     public static int[] sortArray (int [] number) {
         for (int i = 0; i < number.length; i++) {
             for (int a = i; a < number.length; a++) {
-                if (roundnumber(number[i])) > (roundnumber(number[a])) {
-                    int blnk = number[i];
+                if (roundnumber(number[i]) > roundnumber(number[a])) {
+                    int temp = number[i];
                     number[i] = number[a];
-                    number[a] = blnk;
+                    number[a] = temp;
 
 
                 }
@@ -223,27 +224,7 @@ public static int[] rndArray(int min, int max){
             }
         }
         return number;
+
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
